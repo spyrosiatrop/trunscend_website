@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trunscend</title>
+  <title>About - Trunscend</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,13 +19,13 @@
       </div>
       <nav class="nav-menu">
         <a href="index.html" class="nav-link">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 5px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 5px;">
             <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" stroke="black" stroke-width="0.5"/>
           </svg>
           Home
         </a>
         <a href="about.html" class="nav-link">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 5px;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle; margin-right: 5px;">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" stroke="black" stroke-width="0.5"/>
           </svg>
           About
@@ -46,83 +46,46 @@
     </div>
   </header>
 
-  <section id="home" class="main-content">
-    <div class="container">
-      <h1>Run to your potential</h1>
-      <p>A personalized training plan backed by science and designed to succeed safely and effectively.<br><br>Ready to take the first step?</p>
-      <a class="cta-button" href="https://play.google.com/store/apps/details?id=com.trunscend.trunscendapp" target="_blank">
-        <img src="assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="play-badge" />
-      </a>
-    </div>
+  <section class="about-section">
+    <div class="about-container">
+      <h2>Trunscend – Your Personalized Running Coach</h2>
+      <p class="about-intro">Preparing for a running event? Whether you're training for a marathon, half-marathon, 10K, or 5k, Trunscend helps you build a custom training plan tailored to your goals, experience level, and schedule.</p>
+      
+      <div class="about-feature">
+        <h3>🏃‍♂️ Train Smarter, Not Harder</h3>
+        <p>With Trunscend, you don't need a one-size-fits-all training plan. The app creates a personalised schedule based on:</p>
+        <ul>
+          <li>✔️ The event you want to participate in</li>
+          <li>✔️ Your target race distance and date</li>
+          <li>✔️ Your available training days</li>
+          <li>✔️ Your pace and endurance goals</li>
+        </ul>
+      </div>
 
-    <div class="carousel-container">
-      <div class="carousel">
-        <div class="phone-mockup">
-          <img id="carousel-image" src="assets/screenshots/scrnsht_home.jpeg" alt="App Screenshot" />
-        </div>
-        <div class="carousel-controls">
-          <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">‹</button>
-          <div class="dot-indicators" id="dot-indicators"></div>
-          <button class="carousel-btn next-btn" onclick="changeSlide(1)">›</button>
-        </div>
+      <div class="about-feature">
+        <h3>📅 Custom Training Plans</h3>
+        <p>No more generic plans! Our smart algorithm generates a structured yet flexible plan, balancing workouts, rest days, and progressive improvements to keep you on track.</p>
+      </div>
+
+      <div class="about-feature">
+        <h3>🏅 Why Choose Trunscend?</h3>
+        <ul>
+          <li>🚀 Personalized Just for You – No more generic training plans—yours is built around your unique needs</li>
+          <li>📆 Fits Your Schedule – Adapt your training based on your availability</li>
+          <li>🎯 Goal-Oriented – Stay focused and on track for race day success</li>
+        </ul>
+      </div>
+
+      <div class="about-cta">
+        <h3>🏃‍♀️ Start Your Journey Today!</h3>
+        <p>Trunscend makes race preparation seamless and enjoyable. Download now and take your running to the next level!</p>
+        <a class="cta-button" href="https://play.google.com/store/apps/details?id=com.trunscend.trunscendapp" target="_blank">
+          <img src="assets/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="play-badge" />
+        </a>
       </div>
     </div>
   </section>
 
   <footer class="footer"></footer>
-
-  <script>
-    const screenshots = [
-      'assets/screenshots/scrnsht_login.jpeg',
-      'assets/screenshots/scrnsht_welcome.jpeg',
-      'assets/screenshots/scrnsht_createplan.jpeg',
-      'assets/screenshots/scrnsht_plan_ready.jpeg',
-      'assets/screenshots/scrnsht_home.jpeg',
-      'assets/screenshots/scrnsht_week.jpeg',
-      'assets/screenshots/scrnsht_easy_session.jpeg',
-      'assets/screenshots/scrnsht_hard_session.jpeg',
-      'assets/screenshots/scrnsht_settings.jpeg'
-    ];
-    
-    let currentSlide = 0;
-    
-    // Initialize dot indicators
-    function initDots() {
-      const dotContainer = document.getElementById('dot-indicators');
-      screenshots.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        dot.onclick = () => goToSlide(index);
-        dotContainer.appendChild(dot);
-      });
-      updateDots();
-    }
-    
-    function updateDots() {
-      const dots = document.querySelectorAll('.dot');
-      dots.forEach((dot, index) => {
-        dot.classList.toggle('active', index === currentSlide);
-      });
-    }
-    
-    function changeSlide(direction) {
-      currentSlide = (currentSlide + direction + screenshots.length) % screenshots.length;
-      document.getElementById('carousel-image').src = screenshots[currentSlide];
-      updateDots();
-    }
-    
-    function goToSlide(index) {
-      currentSlide = index;
-      document.getElementById('carousel-image').src = screenshots[currentSlide];
-      updateDots();
-    }
-    
-    // Initialize on page load
-    window.onload = initDots;
-    
-    // Auto-play carousel every 3 seconds
-    setInterval(() => changeSlide(1), 3000);
-  </script>
 </body>
 </html>
-
